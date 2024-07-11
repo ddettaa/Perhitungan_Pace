@@ -3,6 +3,15 @@
 #include <string>
 using namespace std;
 
+// Definisi struct untuk menyimpan data lari
+struct DataLari {
+    string nama;
+    string jenisKelamin;
+    double totalWaktuMenit;
+    double totalWaktuDetik;
+    double totalJarak;
+
+
 int main() {
 
     int pilihan;
