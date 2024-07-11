@@ -37,6 +37,25 @@ string tentukanIntensitas(double kecepatanDetik) {
         return "Intensitas Tinggi: Pace kurang dari 12 menit per mil";
     }
 }
+// Fungsi untuk menentukan rekomendasi berdasarkan umur dan jenis kelamin
+string rekomendasi(string jenisKelamin, int umur) {
+    if (jenisKelamin == "pria") {
+        if (umur <= 30)
+            return "Pace yang sangat bagus.";
+        else if (umur <= 45)
+            return "Pace yang baik.";
+        else
+            return "Pace yang lumayan.";
+    } else if (jenisKelamin == "wanita") {
+        if (umur <= 30)
+            return "Pace yang sangat bagus.";
+        else if (umur <= 45)
+            return "Pace yang baik.";
+        else
+            return "Pace yang lumayan.";
+    }
+    return "";
+
 
 }
 
