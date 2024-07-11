@@ -61,6 +61,9 @@ string rekomendasi(string jenisKelamin, int umur) {
 
 
 int main() {
+    vector<DataLari> dataLariArray;
+    const int MAX_SIMPANAN = 5;
+
 
     int pilihan;
     do {
@@ -73,10 +76,27 @@ int main() {
 
         switch (pilihan) {
             case 1: {
-                
-                cout << "" << endl;
+                if (dataLariArray.size() >= MAX_SIMPANAN) {
+                    dataLariArray.erase(dataLariArray.begin());
+                }
+
+                DataLari data;
+                cout << "Masukkan nama Anda: ";
+                cin >> data.nama;
+                cout << "Masukkan jenis kelamin (pria/wanita): ";
+                cin >> data.jenisKelamin;
+                cout << "Masukkan total waktu lari (menit): ";
+                cin >> data.totalWaktuMenit;
+                cout << "Masukkan total waktu lari (detik): ";
+                cin >> data.totalWaktuDetik;
+                cout << "Masukkan total jarak lari (kilometer): ";
+                cin >> data.totalJarak;
+
+                dataLariArray.push_back(data);
+                cout << "Data lari berhasil disimpan." << endl;
                 break;
             }
+
             case 2: {
                 
                 cout << "" << endl;
