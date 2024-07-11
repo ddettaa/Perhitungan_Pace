@@ -111,14 +111,20 @@ int main() {
                         cout << "Total Waktu (menit): " << data.totalWaktuMenit << endl;
                         cout << "Total Waktu (detik): " << data.totalWaktuDetik << endl;
                         cout << "Total Jarak (kilometer): " << data.totalJarak << endl;
-                        cout << "Pace: " << pace << " menit per kilometer" << endl;
-                        cout << "Kecepatan (dalam detik per kilometer): " << kecepatanDetik << " detik per kilometer" << endl;
-                        cout << "Intensitas: " << tentukanIntensitas(kecepatanDetik) << endl;
 
-                        int umur;
-                        cout << "Masukkan umur Anda: ";
-                        cin >> umur;
-                        cout << "Rekomendasi: " << rekomendasi(data.jenisKelamin, umur) << endl;
+                        // Periksa jika waktu terlalu lama dan kecepatan terlalu lambat
+                        if (pace > 20 || kecepatanDetik < 0.00027778) {
+                            cout << "Maaf, kami tidak bisa menghitung pace lari Anda dikarenakan waktu tempuh yang lama dan kecepatan Anda terlalu lambat." << endl;
+                        } else {
+                            cout << "Pace: " << pace << " menit per kilometer" << endl;
+                            cout << "Kecepatan (dalam detik per kilometer): " << kecepatanDetik << " detik per kilometer" << endl;
+                            cout << "Intensitas: " << tentukanIntensitas(kecepatanDetik) << endl;
+
+                            int umur;
+                            cout << "Masukkan umur Anda: ";
+                            cin >> umur;
+                            cout << "Rekomendasi: " << rekomendasi(data.jenisKelamin, umur) << endl;
+                        }
 
                         cout << endl;
                     }
