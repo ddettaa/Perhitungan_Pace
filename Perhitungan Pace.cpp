@@ -11,6 +11,19 @@ struct DataLari {
     double totalWaktuDetik;
     double totalJarak;
 
+    // Fungsi untuk menghitung pace
+double hitungPace(double totalWaktuMenit, double totalWaktuDetik, double totalJarak) {
+    double totalWaktu = totalWaktuMenit + (totalWaktuDetik / 60.0);
+    return totalWaktu / totalJarak;
+}
+
+// Fungsi untuk menghitung kecepatan (speed) dalam satuan detik
+double hitungKecepatanDetik(double totalWaktuMenit, double totalWaktuDetik, double totalJarak) {
+    double totalWaktuDetikTotal = (totalWaktuMenit * 60) + totalWaktuDetik;
+    return totalJarak / totalWaktuDetikTotal; // dalam detik per kilometer
+}
+}
+
 
 int main() {
 
